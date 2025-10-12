@@ -1,12 +1,58 @@
 :root {
   color-scheme: light dark;
-  background-color: Canvas;
   color: CanvasText;
   padding: 1.5rem;
+  font: caption;
+}
+
+body {
+  height: 100%;
 }
 
 form {
   display: flex;
-  gap: 0.5rem;
-  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: start;
+}
+
+label {
+  position: relative;
+}
+
+.tooltip-trigger {
+  color: GrayText;
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+[role="tooltip"] {
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  top: 0rem;
+  left: 100%;
+  background: Field;
+  color: CanvasText;
+  border: Canvas;
+  padding: 0 1rem;
+  border-radius: 0.25rem;
+  width: max-content;
+  max-width: 400px;
+  transition: visibility 0.1s;
+}
+[aria-describedby]:hover,
+[aria-describedby]:focus {
+  position: relative;
+}
+[aria-describedby]:hover + [role="tooltip"],
+[aria-describedby]:focus + [role="tooltip"],
+[role="tooltip"]:hover,
+[role="tooltip"]:focus {
+  visibility: visible;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
 }

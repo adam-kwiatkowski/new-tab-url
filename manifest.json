@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
 	"name": "New Tab URL",
-	"description": "Override new tab settings to open a specified URL",
-	"version": "1.0.0",
+	"description": "Override default new tab with a specified URL",
+	"version": "1.1.0",
 	"icons": {
 		"64": "icons/icon.png"
 	},
@@ -17,7 +17,7 @@
     ],
     "browser_specific_settings": {
         "gecko": {
-            "id": "@new-tab-override"
+            "id": "@new-tab-url"
         }
     }
 }
