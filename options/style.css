@@ -1,0 +1,12 @@
+:root {
+  color-scheme: light dark;
+  background-color: Canvas;
+  color: CanvasText;
+  padding: 1.5rem;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
