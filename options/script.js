@@ -6,10 +6,19 @@ function saveOptions(e) {
     document.querySelector('input[name="override_mode"]:checked')?.value ||
     "iframe";
 
-  browser.storage.sync.set({
-    url,
-    override_mode: overrideMode,
-  });
+  browser.storage.sync
+    .set({
+      url,
+      override_mode: overrideMode,
+    })
+    .then(() => {
+      const checkmark = document.querySelector("#save-success");
+      checkmark.classList.add("visible");
+
+      setTimeout(() => {
+        checkmark.classList.remove("visible");
+      }, 1000);
+    });
 }
 
 function restoreOptions() {
