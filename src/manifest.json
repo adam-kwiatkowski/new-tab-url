@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "New Tab URL",
+    "description": "Override default new tab with a specified URL",
+    "version": "1.1.3",
+    "icons": {
+        "64": "icons/icon.png"
+    },
+    "chrome_url_overrides": {
+        "newtab": "new-tab/index.html"
+    },
+    "options_ui": {
+        "page": "options/index.html"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "@new-tab-url",
+            "data_collection_permissions": {
+                "required": [
+                    "none"
+                ]
+            }
+        }
+    }
+}
