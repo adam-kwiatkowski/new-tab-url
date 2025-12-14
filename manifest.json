@@ -17,7 +17,12 @@
     ],
     "browser_specific_settings": {
         "gecko": {
-            "id": "@new-tab-url"
+            "id": "@new-tab-url",
+            "data_collection_permissions": {
+                "required": [
+                    "none"
+                ]
+            }
         }
     }
 }
