@@ -4,7 +4,7 @@
     "description": "Override default new tab with a specified URL",
     "version": "1.1.4",
     "icons": {
-        "64": "icons/icon.png"
+        "64": "assets/icons/icon.png"
     },
     "chrome_url_overrides": {
         "newtab": "new-tab/index.html"
