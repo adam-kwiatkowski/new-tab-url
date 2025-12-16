@@ -1,60 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link href="style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <form>
-      <div style="display: flex; flex-direction: column; gap: 0.5rem">
-        <label for="url">New tab URL</label>
+
+<head>
+  <meta charset="UTF-8" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <form style="display: flex; flex-direction: column; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 0.5rem">
+      <label for="url" class="heading">
+        <img src="../assets/icons/icon.svg" style="height: 24px; margin-bottom: -3px;">
+        <span>
+          New tab URL
+        </span>
+      </label>
+      <div>
         <input type="url" name="url" id="url" />
+        <button type="submit" style="position: relative">
+          Save
+          <div role="tooltip" id="save-success">&checkmark;</div>
+        </button>
       </div>
+    </div>
 
-      <fieldset>
-        <legend style="position: relative">
-          Override mode
-          <span aria-describedby="mode-desc" class="tooltip-trigger">
-            (?)
-          </span>
-          <div role="tooltip" id="mode-desc">
-            <p>Choose how the new tab URL is opened when overriding links.</p>
-            <ul>
-              <li>
-                <strong>iframe (default):</strong> Opens the page inside a
-                borderless iframe. This keeps the browser's normal focus
-                behavior, but some websites block being loaded in an iframe.
-              </li>
-              <li>
-                <strong>redirect:</strong> Redirects the tab directly to the
-                target URL. Works on all pages, but the address bar will not be
-                cleared.
-              </li>
-            </ul>
-          </div>
-        </legend>
+    <span class="heading" style="margin-top: 2rem;">Tab override mode</span>
+    <div class="override-options">
+      <label class="override-mode">
+        <input type="radio" name="override_mode" id="iframe" value="iframe" />
+        <span class="radio-header">Inline frame</span>
+        <span class="override-mode-details">
+          <img src="../assets/images/override-variant-iframe.svg" alt="" srcset="">
+          <span class="override-mode-description">Opens the page inside a borderless iframe. This keeps the browser's normal focus behavior, but some websites block being loaded in an iframe.</span>
+        </span>
+      </label>
+      <label class="override-mode">
+        <input type="radio" name="override_mode" id="redirect" value="redirect" />
+        <span class="radio-header">Redirect</span>
+        <span class="override-mode-details">
+          <img src="../assets/images/override-variant-url.svg" alt="" srcset="">
+          <span class="override-mode-description">Redirects the tab directly to the target URL. Works with all websites, but the address bar will not be cleared.</span>
+        </span>
+      </label>
+    </div>
+  </form>
+  <script src="script.js"></script>
+</body>
 
-        <div style="position: relative">
-          <input type="radio" name="override_mode" id="iframe" value="iframe" />
-          <label for="iframe">iframe</label>
-        </div>
-
-        <div>
-          <input
-            type="radio"
-            name="override_mode"
-            id="redirect"
-            value="redirect"
-          />
-          <label for="redirect">redirect</label>
-        </div>
-      </fieldset>
-
-      <button type="submit" style="position: relative">
-        Save
-        <div role="tooltip" id="save-success">Saved &checkmark;</div>
-      </button>
-    </form>
-    <script src="script.js"></script>
-  </body>
 </html>

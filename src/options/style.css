@@ -1,19 +1,83 @@
+@font-face {
+  font-family: 'Familjen Grotesk';
+  src: url(../assets/fonts/FamiljenGrotesk-VariableFont_wght.ttf);
+}
+
 :root {
   color-scheme: light dark;
   color: CanvasText;
-  padding: 1.5rem;
-  font: caption;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  --accent: #649bee;
 }
 
 body {
-  height: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.heading {
+  font-size: xx-large;
+  font-family: 'Familjen Grotesk', Inter, Arial, sans-serif;
+  text-align: center;
+}
+
+.override-mode {
+  border: 1px solid;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  gap: 1rem;
+  overflow: hidden;
+  border-color: gray;
+  cursor: pointer;
+}
+
+.override-mode-details {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.override-mode-description {
+  max-width: 100%;
+  word-wrap: break-word;
+  color: color-mix(in srgb, CanvasText 75%, Canvas);
+}
+
+.override-options {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0rem 1rem 5rem 1rem;
+}
+
+@media (min-width: 40rem) {
+  .override-options {
+    width: 70%;
+    max-width: 800px;
+  }
 }
 
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: start;
+  align-items: center;
+  height: 100%;
+  padding-top: 5rem;
+  box-sizing: border-box;
+}
+
+label:has(> input[type="radio"]:checked) {
+  border-color: var(--accent);
+}
+
+.override-mode-details>img {
+  user-select: none;
+  pointer-events: none;
 }
 
 label {
@@ -22,6 +86,29 @@ label {
 
 button {
   cursor: pointer;
+}
+
+button[type="submit"] {
+  height: 100%;
+  padding: 0 1rem;
+  background-color: var(--accent);
+  border-radius: 0.25rem;
+  border: 0;
+  color: white;
+}
+
+input[type="url"] {
+  border-radius: 0.25rem;
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  width: 20vw;
+  max-width: 600px;
+  min-width: 200px;
+}
+
+.radio-header {
+  font-size: large;
+  font-weight: 500;
 }
 
 #save-success {
@@ -59,12 +146,14 @@ button {
   max-width: 400px;
   transition: visibility 0.1s;
 }
+
 [aria-describedby]:hover,
 [aria-describedby]:focus {
   position: relative;
 }
-[aria-describedby]:hover + [role="tooltip"],
-[aria-describedby]:focus + [role="tooltip"],
+
+[aria-describedby]:hover+[role="tooltip"],
+[aria-describedby]:focus+[role="tooltip"],
 [role="tooltip"]:hover,
 [role="tooltip"]:focus {
   visibility: visible;
@@ -73,4 +162,8 @@ button {
 footer {
   position: absolute;
   bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  font: caption;
+  color: color-mix(in srgb, CanvasText 30%, transparent);
 }
