@@ -10,7 +10,7 @@
   <form style="display: flex; flex-direction: column; align-items: center;">
     <div style="display: flex; flex-direction: column; gap: 0.5rem">
       <label for="url" class="heading">
-        <img src="../assets/icons/icon.png" style="height: 32px; margin-bottom: -5px;">
+        <img src="../assets/icons/icon.svg" style="height: 24px; margin-bottom: -3px;">
         <span>
           New tab URL
         </span>
@@ -19,7 +19,7 @@
         <input type="url" name="url" id="url" />
         <button type="submit" style="position: relative">
           Save
-          <div role="tooltip" id="save-success">Saved &checkmark;</div>
+          <div role="tooltip" id="save-success">&checkmark;</div>
         </button>
       </div>
     </div>
@@ -39,17 +39,11 @@
         <span class="radio-header">Redirect</span>
         <span class="override-mode-details">
           <img src="../assets/images/override-variant-url.svg" alt="" srcset="">
-          <span class="override-mode-description">Redirects the tab directly to the target URL. Works on all pages, but the address bar will not be cleared.</span>
+          <span class="override-mode-description">Redirects the tab directly to the target URL. Works with all websites, but the address bar will not be cleared.</span>
         </span>
       </label>
-
-
     </div>
-
   </form>
-  <footer>
-    Adam Kwiatkowski / <a href="https://github.com/adam-kwiatkowski/new-tab-url" style="color: unset;"></a>GitHub</a>
-  </footer>
   <script src="script.js"></script>
 </body>
 

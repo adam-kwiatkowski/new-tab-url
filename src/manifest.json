@@ -1,10 +1,10 @@
 {
     "manifest_version": 2,
     "name": "New Tab URL",
-    "description": "Override default new tab with a specified URL",
-    "version": "1.1.4",
+    "description": "Override the default new tab with a specified URL",
+    "version": "1.2.0",
     "icons": {
-        "64": "assets/icons/icon.png"
+        "64": "assets/icons/icon.svg"
     },
     "chrome_url_overrides": {
         "newtab": "new-tab/index.html"

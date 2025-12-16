@@ -41,3 +41,5 @@ function restoreOptions() {
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
 document.querySelector("form").addEventListener("submit", saveOptions);
+document.querySelector("#iframe").addEventListener("change", saveOptions);
+document.querySelector("#redirect").addEventListener("change", saveOptions);
